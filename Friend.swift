@@ -6,7 +6,9 @@
 //
 
 import Foundation
+import SwiftData
 
+@Model
 class Friend{
     
     //this is how u declare without assigning value (initializing)

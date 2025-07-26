@@ -6,13 +6,12 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
     
-    @State private var friends: [Friend] = [
-        Friend(n: "Arushi", d: Date(timeIntervalSince1970: 0)),
-        Friend(n: "Deanna", d: .now)
-    ]
+    @Query private var friends: [Friend]
+    
     
     var body: some View {
         NavigationStack{
@@ -34,4 +33,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .modelContainer(for: Friend.self, inMemory: true)
 }
